@@ -70,7 +70,7 @@ function randomBetween(a: number, b: number) {
   return a + Math.random() * (b - a);
 }
 
-export default function WordParticleSystem({ name = "HITHU" }: WordParticleSystemProps) {
+export default function WordParticleSystem({}: WordParticleSystemProps) {
   const [elements, setElements] = useState<FloatingElement[]>([]);
   const [animationState, setAnimationState] = useState<AnimationState>("idle");
   const [ripplePhase, setRipplePhase] = useState<RipplePhase>("none");

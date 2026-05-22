@@ -8,7 +8,6 @@ import MemorySection from "@/components/MemorySection";
 import SurpriseSection from "@/components/SurpriseSection";
 import WordParticleSystem from "@/components/WordParticleSystem";
 import { motion, Variants, AnimatePresence } from "framer-motion";
-import { Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 
 type IntroStep = "typing" | "transitioning" | "hero";
