@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-playfair), serif;
+  --font-sans: var(--font-outfit), sans-serif;
+  --font-poppins: var(--font-poppins), sans-serif;
+
+  --animate-float-slow: float-slow 15s ease-in-out infinite;
+  --animate-float-medium: float-medium 10s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 8s ease-in-out infinite;
+  --animate-twinkle-slow: twinkle 4s ease-in-out infinite;
+  --animate-twinkle-fast: twinkle 2s ease-in-out infinite;
+
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-25px) scale(1.03);
+    }
+  }
+  @keyframes float-medium {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-15px) scale(1.02);
+    }
+  }
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.2;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.4;
+      transform: scale(1.15);
+    }
+  }
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.2;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 50%, #0d0722 0%, #060212 100%);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(13, 7, 34, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(198, 179, 236, 0.2);
+  border-radius: 9999px;
+  border: 2px solid rgba(13, 7, 34, 0.8);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(198, 179, 236, 0.4);
+}
+
+/* Reusable Glassmorphism style utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    to right,
+    #fff5f5 10%,
+    #ffd3e0 30%,
+    #ffe5d9 50%,
+    #c6b3ec 70%,
+    #ffd3e0 85%,
+    #fff5f5 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: textShimmer 7s linear infinite;
+  text-shadow: 0 0 40px rgba(255, 211, 224, 0.1);
+}
+
